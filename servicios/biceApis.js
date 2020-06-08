@@ -1,4 +1,7 @@
-const axios = require('axios');
+const axios = require('axios');  
+const { formatFecha } = require('../utilitarios/utils');
+
+
  
    let getLast = () => {
     return new Promise((resolve, reject)=>{
@@ -7,9 +10,8 @@ const axios = require('axios');
       // handle success
       let datos = [];
       for (clave in response.data){
-        let fecha = new Date(response.data[clave].date*1000)
         let objeto = {
-            fecha:fecha,
+            fecha:formatFecha(response.data[clave].date*1000),
             id:response.data[clave].key,
             nombre:response.data[clave].name,
             unidad:response.data[clave].unit,
@@ -39,8 +41,8 @@ let getvalueskey = (item) => {
            let unidad = resp.data.unit
            
            for (clave in resp.data.values){
-               let fecha = new Date (clave*1000);
-               let valor = resp.data[clave] 
+              let fecha=formatFecha(clave*1000)
+               let valor = resp.data.values[clave] 
                let objeto = {
                 nombre:nombre,
                 fecha,

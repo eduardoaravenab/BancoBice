@@ -1,12 +1,15 @@
-##Aplicación consola Banco Bice##
+Aplicacion que despliega valores de los elementos (cobre|dolar|euro|ipc|ivp|oro|plata|uf|utm|yen) para una fecha determinada, donde se puede revisar el Detalle de cada uno con un L%F gráfico.
 
-1- Al descargar el proyecto, se debe ejecutar el comando npm install
+Pasos para instalar:
 
-2- La aplicación se ejecuta de la siguiente manera
+(1) Descargar Proyecto
+git clone https://github.com/eduardoaravenab/BancoBice.git
 
-    (a) node app todos
-        El comando todos ejecuta el servicio last y genera un archivo con la respuesta
+(2) Posicionarse en la carpeta BancoBice y ejecutar el sgte comando
+npm install
 
-    (b) node app values --item "elemento"
-        El comando values --item "elemento" ejecuta el servicio filtrando por el campo que se envía en el valor elemento.
-        Los elementos que acepta son: cobre|dolar|euro|ipc|ivp|oro|plata|uf|utm|yen
+(3) Ejecuta servidor con el sgte comando
+node app
+
+(4) Abrir la sgte url en un navegador
+localhost:3000/
